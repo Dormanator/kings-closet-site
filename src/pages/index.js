@@ -1,12 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
+import Home from "../components/home"
 
-const Home = data => {
+const Index = () => {
   return (
     <Layout>
-      <h1>Header</h1>
+      <Home />
     </Layout>
   )
 }
 
-export default Home
+export default Index

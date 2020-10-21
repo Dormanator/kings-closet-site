@@ -1,0 +1,26 @@
+.carousel {
+  margin-top: 106px;
+}
+
+.carousel-caption {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+@include media-breakpoint-down(md) {
+  .carousel-caption {
+    font-size: 2rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .carousel-caption {
+    font-size: 1.5rem;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .carousel-caption {
+    font-size: 1.25rem;
+  }
+}
