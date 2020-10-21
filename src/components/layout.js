@@ -1,11 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Navbar from "react-bootstrap/Navbar"
+import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
+import Navbar from "react-bootstrap/Navbar"
+import Row from "react-bootstrap/Row"
 import Logo from "../images/logo.svg"
 
 const Layout = ({ children }) => {
@@ -27,15 +27,15 @@ const Layout = ({ children }) => {
 
   let socialMediaLinkConfig = {
     facebook: {
-      link: "www.facebook.com",
+      link: "https://www.facebook.com/KingsClosetDFW/",
       alt: "Facebook Logo",
     },
     instagram: {
-      link: "www.instagram.com",
+      link: "https://www.instagram.com/kingsclosetdfw/",
       alt: "Instagram Logo",
     },
     linkedin: {
-      link: "www.linkedin.com",
+      link: "https://www.linkedin.com/in/king-s-closet-083094154/",
       alt: "LinkedIn Logo",
     },
   }
@@ -44,6 +44,7 @@ const Layout = ({ children }) => {
   for (let socialMediaName of Object.keys(socialMediaLinkConfig)) {
     data.allFile.edges.forEach(img => {
       let imgData = img.node.childImageSharp.fixed
+
       if (imgData.src.toLowerCase().includes(socialMediaName.toLowerCase())) {
         socialMediaLinkConfig[socialMediaName].img = imgData
       }
@@ -65,8 +66,8 @@ const Layout = ({ children }) => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ml-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+            <Nav className="ml-auto font-weight-bold">
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#volunteer">Volunteer</Nav.Link>
               <Nav.Link href="#contact">Contact</Nav.Link>
@@ -80,7 +81,12 @@ const Layout = ({ children }) => {
           <Row>
             <Col md="6" className="text-center text-md-left">
               {Object.values(socialMediaLinkConfig).map(data => (
-                <a href={data.link} target="_blank" rel="noreferrer">
+                <a
+                  key={data.link}
+                  href={data.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Img fixed={data.img} alt={data.alt} />
                 </a>
               ))}
