@@ -1,6 +1,7 @@
 const path = require(`path`)
 
 module.exports = {
+  pathPrefix: "/kings-closet-site",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
