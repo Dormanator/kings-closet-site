@@ -40,7 +40,8 @@ const Layout = ({ children }) => {
     },
   }
 
-  // Add the logo image corresponding to each social media link to the link config object
+  // Add each logo's image data, returned from the query, to the corresponding config
+  // object's 'img' property for each social media site in the socialMediaLinkConfig object
   for (let socialMediaName of Object.keys(socialMediaLinkConfig)) {
     data.allFile.edges.forEach(img => {
       let imgData = img.node.childImageSharp.fixed
