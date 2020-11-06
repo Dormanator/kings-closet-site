@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Carousel from "react-bootstrap/Carousel"
 
-const Home = () => {
+const Home = ({ carouselConfig }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "carousel" } }) {
@@ -24,21 +24,6 @@ const Home = () => {
       }
     }
   `)
-
-  let carouselConfig = {
-    slide1: {
-      caption: "We come together each week",
-      altText: "Volunteers passing out clothes to the homeless",
-    },
-    slide2: {
-      caption: "Helping those in need",
-      altText: "Line of homeless individuals waiting to receive donations",
-    },
-    slide3: {
-      caption: "Serving the lord and our community",
-      altText: "Homeless sitting in front of a pastor delivering a sermon",
-    },
-  }
 
   // Setup the object holding each image config with the correct img data for the carousel
   for (let imgName in carouselConfig) {
@@ -77,6 +62,23 @@ const Home = () => {
       ))}
     </Carousel>
   )
+}
+
+Home.defaultProps = {
+  carouselConfig: {
+    slide1: {
+      caption: "We come together each week",
+      altText: "Volunteers passing out clothes to the homeless",
+    },
+    slide2: {
+      caption: "Helping those in need",
+      altText: "Line of homeless individuals waiting to receive donations",
+    },
+    slide3: {
+      caption: "Serving the lord and our community",
+      altText: "Homeless sitting in front of a pastor delivering a sermon",
+    },
+  },
 }
 
 export default Home
