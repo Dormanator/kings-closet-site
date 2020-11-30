@@ -69,7 +69,7 @@ const Layout = ({ children }) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto font-weight-bold">
-              <Nav.Link as={AnchorLink} to="/">
+              <Nav.Link as={AnchorLink} to="/#home">
                 Home
               </Nav.Link>
               <Nav.Link as={AnchorLink} to="/#about">
