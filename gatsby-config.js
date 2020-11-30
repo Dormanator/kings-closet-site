@@ -18,7 +18,6 @@ module.exports = {
         precision: 6,
       },
     },
-    "gatsby-plugin-fontawesome-css",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
