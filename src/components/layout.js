@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Img from "gatsby-image"
 import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
@@ -40,7 +41,8 @@ const Layout = ({ children }) => {
     },
   }
 
-  // Add the logo image corresponding to each social media link to the link config object
+  // Add each logo's image data, returned from the query, to the corresponding config
+  // object's 'img' property for each social media site in the socialMediaLinkConfig object
   for (let socialMediaName of Object.keys(socialMediaLinkConfig)) {
     data.allFile.edges.forEach(img => {
       let imgData = img.node.childImageSharp.fixed
@@ -67,10 +69,18 @@ const Layout = ({ children }) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto font-weight-bold">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="#about">About</Nav.Link>
-              <Nav.Link href="#volunteer">Volunteer</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav.Link as={AnchorLink} to="/#home">
+                Home
+              </Nav.Link>
+              <Nav.Link as={AnchorLink} to="/#about">
+                About
+              </Nav.Link>
+              <Nav.Link as={AnchorLink} to="/#volunteer">
+                Volunteer
+              </Nav.Link>
+              <Nav.Link as={AnchorLink} to="/#contact">
+                Contact
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

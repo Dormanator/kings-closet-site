@@ -22,6 +22,7 @@ This project was a chance for me to give back and get more experience by redesig
 
     ```shell
     cd kings-closet/
+    yarn install
     yarn develop
     ```
 
