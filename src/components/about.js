@@ -1,9 +1,15 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Col from "react-bootstrap/Col"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faSocks,
+  faUsers,
+  faHandHoldingHeart,
+} from "@fortawesome/free-solid-svg-icons"
 
 const About = ({ title, paragraphs, practices }) => {
   const data = useStaticQuery(graphql`
@@ -18,8 +24,14 @@ const About = ({ title, paragraphs, practices }) => {
     }
   `)
 
+  const iconMap = {
+    faSocks: faSocks,
+    faUsers: faUsers,
+    faHandHoldingHeart: faHandHoldingHeart,
+  }
+
   return (
-    <>
+    <div id="about" className="bg-light">
       <Container>
         <Row className="pt-5">
           <Col md="6">
@@ -44,7 +56,12 @@ const About = ({ title, paragraphs, practices }) => {
           <Row>
             {practices.map(practice => (
               <Col md="4" className="text-center">
-                <div className="h-100 p-5 border border-white">
+                <div className="h-100 p-4 border border-white">
+                  <FontAwesomeIcon
+                    icon={iconMap[practice.iconName]}
+                    size="4x"
+                    className="text-white mb-4"
+                  />
                   <h2 className="mb-3 text-secondary font-weight-light">
                     {practice.title}
                   </h2>
@@ -55,7 +72,7 @@ const About = ({ title, paragraphs, practices }) => {
           </Row>
         </Container>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -69,19 +86,19 @@ About.defaultProps = {
       title: "Donations",
       description:
         "We accept monetary and clothing donations so we can serve our community.",
-      icon: "",
+      iconName: "faSocks",
     },
     {
       title: "Volunteers",
       description:
         "Volunteers from across the DFW area come together weekly to help us sort the clothes we receive.",
-      icon: "",
+      iconName: "faUsers",
     },
     {
       title: "Giving",
       description:
         "We distribute clothing to the homeless of Dallas on the 1st through 4th weekends of every month.",
-      icon: "",
+      iconName: "faHandHoldingHeart",
     },
   ],
 }

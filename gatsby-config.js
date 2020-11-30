@@ -1,29 +1,36 @@
-const path = require(`path`)
+const path = require("path")
 
 module.exports = {
   pathPrefix: "/kings-closet-site",
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        name: "images",
+        path: path.join(__dirname, "src", "images"),
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: "gatsby-plugin-sass",
       options: {
         precision: 6,
       },
     },
+    "gatsby-plugin-fontawesome-css",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
           include: /assets/,
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -106,
       },
     },
   ],
