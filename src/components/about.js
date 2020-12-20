@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Col from "react-bootstrap/Col"
@@ -38,8 +39,10 @@ const About = ({ title, paragraphs, practices }) => {
             <h1 className="display-4 border-bottom border-primary mb-3">
               {title}
             </h1>
-            {paragraphs.map(p => (
-              <p className="lead">{p}</p>
+            {paragraphs.map((p, i) => (
+              <p className="lead" key={`about-p-${i}`}>
+                {p}
+              </p>
             ))}
           </Col>
           <Col lg="6">
@@ -55,7 +58,11 @@ const About = ({ title, paragraphs, practices }) => {
         <Container>
           <Row>
             {practices.map(practice => (
-              <Col md="4" className="text-center mt-3 mt-md-0">
+              <Col
+                md="4"
+                className="text-center mt-3 mt-md-0"
+                key={practice.title}
+              >
                 <div className="h-100 border border-white rounded p-4">
                   <FontAwesomeIcon
                     icon={iconMap[practice.iconName]}
@@ -76,6 +83,18 @@ const About = ({ title, paragraphs, practices }) => {
   )
 }
 
+About.propTypes = {
+  title: PropTypes.string.isRequired,
+  paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired,
+  practices: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      iconName: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+}
+
 About.defaultProps = {
   title: "About",
   paragraphs: [
@@ -91,13 +110,13 @@ About.defaultProps = {
     {
       title: "Volunteers",
       description:
-        "Volunteers from across the DFW area come together weekly to help us sort the clothes we receive.",
+        "Volunteers from across the DFW area come together to help us sort the clothes we receive.",
       iconName: "faUsers",
     },
     {
       title: "Giving",
       description:
-        "We distribute clothing to the homeless of Dallas on the 1st through 4th weekends of every month.",
+        "We distribute clothing and donations to those across Dallas in need.",
       iconName: "faHandHoldingHeart",
     },
   ],
