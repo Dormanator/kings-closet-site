@@ -16,8 +16,8 @@ const About = ({ title, paragraphs, practices }) => {
     query {
       file(relativePath: { eq: "leadership.png" }) {
         childImageSharp {
-          fixed(height: 300, quality: 100) {
-            ...GatsbyImageSharpFixed
+          fluid(maxHeight: 300, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -34,35 +34,35 @@ const About = ({ title, paragraphs, practices }) => {
     <div id="about" className="bg-light">
       <Container>
         <Row className="pt-5">
-          <Col md="6">
-            <h1 className="mb-3 display-4 border-bottom border-primary">
+          <Col lg="6">
+            <h1 className="display-4 border-bottom border-primary mb-3">
               {title}
             </h1>
             {paragraphs.map(p => (
               <p className="lead">{p}</p>
             ))}
           </Col>
-          <Col md="6">
+          <Col lg="6">
             <Img
-              fixed={data.file.childImageSharp.fixed}
+              fluid={data.file.childImageSharp.fluid}
               alt="King's Closet leadership with others"
               className="rounded"
             />
           </Col>
         </Row>
       </Container>
-      <div className="py-5 mt-5 bg-primary">
+      <div className="bg-primary py-5 mt-5">
         <Container>
           <Row>
             {practices.map(practice => (
-              <Col md="4" className="text-center">
-                <div className="h-100 p-4 border border-white">
+              <Col md="4" className="text-center mt-3 mt-md-0">
+                <div className="h-100 border border-white rounded p-4">
                   <FontAwesomeIcon
                     icon={iconMap[practice.iconName]}
                     size="4x"
                     className="text-white mb-4"
                   />
-                  <h2 className="mb-3 text-secondary font-weight-light">
+                  <h2 className="text-secondary font-weight-light mb-3">
                     {practice.title}
                   </h2>
                   <p className="text-white">{practice.description}</p>

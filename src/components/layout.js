@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
               width="80"
               height="80"
               className="d-inline-block align-top"
-              alt="King's Closet copy in from of a gold crown on a black hanger"
+              alt="'King's Closet' in front of a gold crown on a black hanger"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
