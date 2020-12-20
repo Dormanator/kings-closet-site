@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Carousel from "react-bootstrap/Carousel"
@@ -66,6 +67,16 @@ const Home = ({ carouselConfig }) => {
       </Carousel>
     </div>
   )
+}
+
+Home.propTypes = {
+  carouselConfig: PropTypes.arrayOf(
+    PropTypes.shape({
+      imgName: PropTypes.string.isRequired,
+      caption: PropTypes.string.isRequired,
+      altText: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 }
 
 Home.defaultProps = {

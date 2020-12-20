@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Img from "gatsby-image"
@@ -9,7 +10,7 @@ import Navbar from "react-bootstrap/Navbar"
 import Row from "react-bootstrap/Row"
 import Logo from "../images/logo.svg"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, socialMediaLinkConfig }) => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "social_media" } }) {
@@ -26,29 +27,13 @@ const Layout = ({ children }) => {
     }
   `)
 
-  let socialMediaLinkConfig = {
-    facebook: {
-      link: "https://www.facebook.com/KingsClosetDFW/",
-      alt: "Facebook Logo",
-    },
-    instagram: {
-      link: "https://www.instagram.com/kingsclosetdfw/",
-      alt: "Instagram Logo",
-    },
-    linkedin: {
-      link: "https://www.linkedin.com/in/king-s-closet-083094154/",
-      alt: "LinkedIn Logo",
-    },
-  }
-
   // Add each logo's image data, returned from the query, to the corresponding config
-  // object's 'img' property for each social media site in the socialMediaLinkConfig object
-  for (let socialMediaName of Object.keys(socialMediaLinkConfig)) {
+  for (let cfg of socialMediaLinkConfig) {
     data.allFile.edges.forEach(img => {
       let imgData = img.node.childImageSharp.fixed
 
-      if (imgData.src.toLowerCase().includes(socialMediaName.toLowerCase())) {
-        socialMediaLinkConfig[socialMediaName].img = imgData
+      if (imgData.src.toLowerCase().includes(cfg.imgName.toLowerCase())) {
+        cfg.img = imgData
       }
     })
   }
@@ -111,6 +96,38 @@ const Layout = ({ children }) => {
       </footer>
     </>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  socialMediaLinkConfig: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string.isRequired,
+      imgName: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    })
+  ),
+}
+
+Layout.defaultProps = {
+  children: <div>Body</div>,
+  socialMediaLinkConfig: [
+    {
+      link: "https://www.facebook.com/KingsClosetDFW/",
+      imgName: "facebook",
+      alt: "Facebook Logo",
+    },
+    {
+      link: "https://www.instagram.com/kingsclosetdfw/",
+      imgName: "instagram",
+      alt: "Instagram Logo",
+    },
+    {
+      link: "https://www.linkedin.com/in/king-s-closet-083094154/",
+      imgName: "linkedin",
+      alt: "LinkedIn Logo",
+    },
+  ],
 }
 
 export default Layout
