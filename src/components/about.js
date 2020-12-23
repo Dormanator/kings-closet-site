@@ -36,7 +36,7 @@ const About = ({ title, paragraphs, practices }) => {
       <Container>
         <Row className="pt-5">
           <Col lg="6">
-            <h1 className="display-4 border-bottom border-primary mb-3">
+            <h1 className="display-4 text-primary border-bottom border-secondary mb-3">
               {title}
             </h1>
             {paragraphs.map((p, i) => (
@@ -69,7 +69,7 @@ const About = ({ title, paragraphs, practices }) => {
                     size="4x"
                     className="text-white mb-4"
                   />
-                  <h2 className="text-secondary font-weight-light mb-3">
+                  <h2 className="text-secondary font-weight-normal mb-3">
                     {practice.title}
                   </h2>
                   <p className="text-white">{practice.description}</p>
