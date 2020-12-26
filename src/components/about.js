@@ -49,7 +49,6 @@ const About = ({ title, paragraphs, practices }) => {
             <Img
               fluid={data.file.childImageSharp.fluid}
               alt="King's Closet leadership with others"
-              className="rounded"
             />
           </Col>
         </Row>
@@ -63,7 +62,7 @@ const About = ({ title, paragraphs, practices }) => {
                 className="text-center mt-3 mt-md-0"
                 key={practice.title}
               >
-                <div className="h-100 border border-white rounded p-4">
+                <div className="h-100 border border-white p-4">
                   <FontAwesomeIcon
                     icon={iconMap[practice.iconName]}
                     size="4x"

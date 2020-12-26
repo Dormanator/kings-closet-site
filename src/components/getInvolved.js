@@ -39,14 +39,14 @@ const GetInvolved = ({ title, sections }) => {
         </Row>
         {sections.map((section, i) => (
           <Row className="pt-3" key={`section-${i}`}>
-            <Col md="4">
+            <Col md="5">
               <Img
                 fluid={data[section.img.name].childImageSharp.fluid}
                 alt={section.img.alt}
-                className="rounded mt-0 mb-3 mt-md-5 mb-md-0"
+                className="rounded border-offset-secondary mt-0 mb-3 mb-md-0"
               />
             </Col>
-            <Col md="8">
+            <Col md="7">
               <h2 className="h3 font-weight-normal">{section.heading}</h2>
               {section.paragraphs.map((p, j) => (
                 <p className="lead" key={`section-${i}-p-${j}`}>
@@ -88,7 +88,7 @@ GetInvolved.defaultProps = {
       },
       heading: "Give to the Closet",
       paragraphs: [
-        "Seventy-five percent of our homeless is men and twenty-five percent is women. We always have a shortage of men’s clothing.",
+        "75% of our homeless is men and 25% is women. We always have a shortage of men’s clothing.",
         "We accept: Shirts, sweaters, sweat shirts, hoodies, jackets, coats, thermal underwear, raincoats, pants, shorts, socks, underwear, bras, belts, purses, shoes, boots, blankets, towels, backpacks, jewelry, dresses, skirts, sun glasses, reading glasses, toiletries, suitcases, bags, children’s/baby clothes, diapers, formula, strollers, maternity clothes, school uniforms.",
       ],
     },
