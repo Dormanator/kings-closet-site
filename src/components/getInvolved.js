@@ -43,7 +43,7 @@ const GetInvolved = ({ title, sections }) => {
               <Img
                 fluid={data[section.img.name].childImageSharp.fluid}
                 alt={section.img.alt}
-                className="rounded mt-5"
+                className="rounded mt-0 mb-3 mt-md-5 mb-md-0"
               />
             </Col>
             <Col md="8">
@@ -57,7 +57,7 @@ const GetInvolved = ({ title, sections }) => {
           </Row>
         ))}
         <Row className="pt-3">
-          <Col xs="12" className="d-flex justify-content-center">
+          <Col xs="12" className="d-flex justify-content-center mt-md-3 mb-3">
             <Button
               href="https://goo.gl/maps/kExbbEyD8JmaDCRKA"
               target="_blank"
@@ -65,7 +65,7 @@ const GetInvolved = ({ title, sections }) => {
               size="lg"
               className="text-white"
             >
-              View Closet Location
+              View the Closet's Location
             </Button>
           </Col>
         </Row>
