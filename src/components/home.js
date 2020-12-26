@@ -50,7 +50,7 @@ const Home = ({ carouselConfig }) => {
               alt={imgConfig.altText}
             />
             <Carousel.Caption
-              className="d-inline-block bg-primary text-uppercase rounded py-2 px-3"
+              className="d-inline-block bg-primary text-uppercase py-2 px-3"
               style={{
                 top: "50%",
                 left: "50%",

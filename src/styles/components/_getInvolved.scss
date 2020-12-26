@@ -1,0 +1,7 @@
+.border-offset-secondary {
+  outline: 1px solid var(--secondary);
+  outline-offset: -50px;
+  border: 25px solid transparent;
+  border-width: 70px 25px 25px 70px;
+  margin: -55px 0 0 -55px;
+}

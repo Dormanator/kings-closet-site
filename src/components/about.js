@@ -36,7 +36,7 @@ const About = ({ title, paragraphs, practices }) => {
       <Container>
         <Row className="pt-5">
           <Col lg="6">
-            <h1 className="display-4 border-bottom border-primary mb-3">
+            <h1 className="display-4 text-primary border-bottom border-secondary mb-3">
               {title}
             </h1>
             {paragraphs.map((p, i) => (
@@ -49,7 +49,6 @@ const About = ({ title, paragraphs, practices }) => {
             <Img
               fluid={data.file.childImageSharp.fluid}
               alt="King's Closet leadership with others"
-              className="rounded"
             />
           </Col>
         </Row>
@@ -63,13 +62,13 @@ const About = ({ title, paragraphs, practices }) => {
                 className="text-center mt-3 mt-md-0"
                 key={practice.title}
               >
-                <div className="h-100 border border-white rounded p-4">
+                <div className="h-100 border border-white p-4">
                   <FontAwesomeIcon
                     icon={iconMap[practice.iconName]}
                     size="4x"
                     className="text-white mb-4"
                   />
-                  <h2 className="text-secondary font-weight-light mb-3">
+                  <h2 className="text-secondary font-weight-normal mb-3">
                     {practice.title}
                   </h2>
                   <p className="text-white">{practice.description}</p>

@@ -60,8 +60,8 @@ const Layout = ({ children, socialMediaLinkConfig }) => {
               <Nav.Link as={AnchorLink} to="/#about">
                 About
               </Nav.Link>
-              <Nav.Link as={AnchorLink} to="/#volunteer">
-                Volunteer
+              <Nav.Link as={AnchorLink} to="/#get-involved">
+                Get Involved
               </Nav.Link>
               <Nav.Link as={AnchorLink} to="/#contact">
                 Contact
