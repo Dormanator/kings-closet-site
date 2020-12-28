@@ -28,9 +28,9 @@ const GetInvolved = ({ title, sections }) => {
   `)
 
   return (
-    <div id="get-involved">
+    <div id="get-involved" className="py-4">
       <Container>
-        <Row className="pt-5">
+        <Row>
           <Col className="text-center">
             <h1 className="display-4 text-primary border-bottom border-secondary mb-3">
               {title}
@@ -56,19 +56,6 @@ const GetInvolved = ({ title, sections }) => {
             </Col>
           </Row>
         ))}
-        <Row className="pt-3">
-          <Col xs="12" className="d-flex justify-content-center mt-md-3 mb-3">
-            <Button
-              href="https://goo.gl/maps/kExbbEyD8JmaDCRKA"
-              target="_blank"
-              variant="primary"
-              size="lg"
-              className="text-white"
-            >
-              View the Closet's Location
-            </Button>
-          </Col>
-        </Row>
       </Container>
     </div>
   )
