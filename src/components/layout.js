@@ -71,7 +71,7 @@ const Layout = ({ children, socialMediaLinkConfig }) => {
         </Container>
       </Navbar>
       {children}
-      <footer className="footer bg-light text-dark pb-3 pt-4 mt-5">
+      <footer className="footer bg-light text-dark pb-4 pt-5 mt-0">
         <Container>
           <Row>
             <Col md="6" className="text-center text-md-left">
