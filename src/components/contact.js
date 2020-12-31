@@ -26,7 +26,7 @@ const Contact = ({ title, paragraphs, phone, email, address }) => {
           </Col>
         </Row>
         <Row className="pt-5">
-          <Col md="6">
+          <Col lg="6">
             <Row>
               <Col className="d-flex align-items-center">
                 <FontAwesomeIcon
@@ -34,7 +34,7 @@ const Contact = ({ title, paragraphs, phone, email, address }) => {
                   size="3x"
                   className="text-primary mr-4"
                 />
-                <h2 className="h4 text-white font-weight-normal">{phone}</h2>
+                <h2 className="h4 text-white font-weight-light">{phone}</h2>
               </Col>
             </Row>
             <Row className="mt-5">
@@ -44,15 +44,19 @@ const Contact = ({ title, paragraphs, phone, email, address }) => {
                   size="3x"
                   className="text-primary mr-4"
                 />
-                <h2 className="h4 text-white font-weight-normal">{email}</h2>
+                <h2 className="h4 text-white font-weight-light">{email}</h2>
               </Col>
             </Row>
           </Col>
-          <Col md="6">
+          <Col
+            lg="6"
+            className="d-flex justify-content-center align-items-center mt-5 mt-lg-0"
+          >
             <iframe
               title="King's Closet's Location"
               frameborder="0"
-              style={{ border: "none" }}
+              className="w-100"
+              style={{ height: "300px", border: "none" }}
               src={`https://www.google.com/maps/embed/v1/place?key=${
                 process.env.GATSBY_MAPS_API_KEY
               }&q=${encodeURI(address)}`}
