@@ -9,7 +9,7 @@ const Contact = ({ title, paragraphs, phone, email, address }) => {
   return (
     <div id="contact" className="bg-secondary pt-4 pb-5">
       <Container>
-        <Row className="">
+        <Row>
           <Col className="text-center">
             <h1 className="display-4 text-primary border-bottom border-white mb-3">
               {title}
