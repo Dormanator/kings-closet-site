@@ -10,7 +10,7 @@
 
 ## 🎓 What's This Project?
 
-This project was a chance for me to give back and get more experience by redesigning and deploying a website for a local non-profit. I gained valuable experience with React, Gatsby, and Bootstrap 4 while creating this site. I also got more hands-on experience with Github solutions for git, issues, and hosting.
+This project was a chance for me to give back and get more experience by redesigning and deploying a website for a local non-profit. I gained valuable experience with React, Gatsby, and Bootstrap 4 while creating this site. I also got more hands-on experience with Github solutions for version control, issues, and hosting.
 
 ## 🚀 How Do I Contribute or Preview the Site Locally?
 
@@ -22,8 +22,8 @@ This project was a chance for me to give back and get more experience by redesig
 
     ```shell
     cd kings-closet/
-    yarn install
-    yarn develop
+    npm install
+    npm develop
     ```
 
 1.  **Open the source code and start editing!**
