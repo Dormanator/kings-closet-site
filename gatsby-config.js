@@ -1,4 +1,5 @@
 const path = require("path")
+require("dotenv")
 
 module.exports = {
   plugins: [
