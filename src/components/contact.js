@@ -73,7 +73,7 @@ Contact.defaultProps = {
   paragraphs: [
     "Do you want to schedule a donation drop-off or a time to volunteer? Want to find out how you can help?",
   ],
-  email: "email@kingscloset.org",
+  email: "mail@kingscloset.org",
   phone: "214 478 7087",
   address: "18492 FM2755, Fate, TX 75189",
 }
